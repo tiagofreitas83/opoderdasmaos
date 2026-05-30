@@ -90,9 +90,9 @@
           </div>
           <div className="pdm-hero-media">
             <div className="pdm-hero-arch arch-soft">
-              <img src="uploads/tiago.jpg"
-                alt="Tiago Silveira, fundador do Poder das Mãos, em seu consultório"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 22%" }} />
+              <img src="uploads/massagem.jpg"
+                alt="Tiago Silveira fazendo massagem terapêutica nas costas de um paciente"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
             </div>
             <div className="pdm-hero-float card">
               <span className="pdm-dot" />
@@ -114,9 +114,9 @@
   function HeroImersivo({ onAgendar }) {
     return (
       <section className="section pdm-hero pdm-hero--imersivo" id="topo">
-        <img src="uploads/tiago.jpg"
-          alt="Tiago Silveira em seu consultório"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 25%" }} />
+        <img src="uploads/massagem.jpg"
+          alt="Tiago Silveira fazendo massagem terapêutica nas costas de um paciente"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }} />
         <div className="pdm-hero-scrim" />
         <div className="wrap pdm-hero-imersivo-inner">
           <Eyebrow icon="spa">Massagem · Acupuntura · MTC · Pilates</Eyebrow>

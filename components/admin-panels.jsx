@@ -7,26 +7,51 @@
   const waTo = (phone, msg) => `https://wa.me/55${(phone || "").replace(/\D/g, "")}?text=${encodeURIComponent(msg || "")}`;
   const fmtDate = (iso) => { if (!iso) return "Sem data"; const d = S.parseISO(iso); return `${S.DOWL[d.getDay()].slice(0,3)}, ${d.getDate()} ${S.MON[d.getMonth()]}`; };
 
+  const ADM_USER = "tiagosilveira";
+  const ADM_HASH = "4299235aec2c347e02ad24f6d0ae07c8a89b984d04ab51d1b2ee693fd9a23ec9";
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+
   function Login({ onPick }) {
-    const roles = [
-      { id: "tiago", name: "Tiago Silveira", sub: "Terapeuta · acesso total", ini: "TS" },
-      { id: "recepcao", name: "Recepção", sub: "Agenda e pedidos", ini: "R" },
-    ];
+    const [user, setUser] = useState("");
+    const [pass, setPass] = useState("");
+    const [err, setErr] = useState("");
+    const [busy, setBusy] = useState(false);
+    const submit = async (e) => {
+      e.preventDefault();
+      setBusy(true); setErr("");
+      const hash = await sha256(pass);
+      if (user.trim().toLowerCase() === ADM_USER && hash === ADM_HASH) {
+        onPick({ id: "tiago", name: "Tiago Silveira", ini: "TS" });
+      } else {
+        setErr("Usuário ou senha incorretos.");
+      }
+      setBusy(false);
+    };
     return (
       <div className="adm-login">
-        <div className="adm-login-card">
+        <form className="adm-login-card" onSubmit={submit} autoComplete="on">
           <div className="adm-login-mark"><Mark size={30} dotColor="var(--ochre)" /></div>
           <h1>Painel da Agenda</h1>
-          <p>O Poder das Mãos · entre para gerenciar as sessões</p>
-          {roles.map((r) => (
-            <button key={r.id} className="adm-role-btn" onClick={() => onPick(r)}>
-              <span className="adm-role-av">{r.ini}</span>
-              <span><strong>{r.name}</strong><span>{r.sub}</span></span>
-              <Ic n="chevron_right" s={20} style={{ marginLeft: "auto", color: "var(--ink-3)" }} />
-            </button>
-          ))}
-          <p style={{ margin: "18px 0 0", fontSize: 12, color: "var(--ink-3)" }}>Demonstração — sem senha real.</p>
-        </div>
+          <p>O Poder das Mãos · acesso restrito</p>
+          <div className="adm-f" style={{ textAlign: "left", marginBottom: 12 }}>
+            <label>Usuário</label>
+            <input value={user} autoComplete="username" placeholder="usuário"
+              onChange={(e) => { setUser(e.target.value); setErr(""); }} />
+          </div>
+          <div className="adm-f" style={{ textAlign: "left" }}>
+            <label>Senha</label>
+            <input type="password" value={pass} autoComplete="current-password" placeholder="senha"
+              onChange={(e) => { setPass(e.target.value); setErr(""); }} />
+          </div>
+          {err && <p style={{ color: "var(--error-600, #C0573B)", fontSize: 13, margin: "12px 0 0", fontWeight: 600 }}>{err}</p>}
+          <button className="adm-btn" type="submit" disabled={busy}
+            style={{ width: "100%", justifyContent: "center", marginTop: 18, padding: "13px" }}>
+            <Ic n="lock" s={18} /> {busy ? "Entrando…" : "Entrar"}
+          </button>
+        </form>
       </div>
     );
   }

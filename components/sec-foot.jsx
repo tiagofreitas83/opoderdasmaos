@@ -73,7 +73,7 @@
               </div>
             </div>
             <div className="pdm-contact-cta">
-              <a className="btn btn-primary" href={wa()} target="_blank" rel="noreferrer"><Ic n="chat" s={18} /> Chamar no WhatsApp</a>
+              <a className="btn btn-primary" href={wa()} target="_blank" rel="noreferrer" style={{ color: "#fff" }}><Ic n="chat" s={18} /> Chamar no WhatsApp</a>
               <a className="btn btn-ghost" href="#agendar"><Ic n="calendar_month" s={18} /> Agendar online</a>
             </div>
           </div>
