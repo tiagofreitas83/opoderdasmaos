@@ -11,8 +11,9 @@
           <div className="pdm-mtc-intro">
             <div className="pdm-mtc-media reveal">
               <div className="arch-soft" style={{ width: "100%", height: "100%" }}>
-                <image-slot id="mtc-photo" shape="rect" placeholder="Foto: ventosas, agulhas ou detalhe das mãos"
-                  style={{ width: "100%", height: "100%" }}></image-slot>
+                <img src="uploads/mtc.jpg"
+                  alt="Instrumentos de Medicina Chinesa: ventosas, moxa e boneco de acupuntura"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
               </div>
             </div>
             <div className="pdm-mtc-copy reveal">

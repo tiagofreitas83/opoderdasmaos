@@ -8,7 +8,6 @@
     ["Medicina Chinesa", "#mtc"],
     ["O Tiago", "#sobre"],
     ["Planos", "#planos"],
-    ["Conteúdo", "#conteudo"],
   ];
 
   function Nav({ onAgendar }) {
@@ -29,12 +28,9 @@
             ))}
           </nav>
           <div className="pdm-nav-cta">
-            <a className="btn btn-ghost btn-sm pdm-wa-link" href={wa()} target="_blank" rel="noreferrer">
+            <a className="btn btn-primary btn-sm pdm-wa-link" href={wa()} target="_blank" rel="noreferrer" style={{ color: "#fff" }}>
               <Ic n="chat" s={18} /> WhatsApp
             </a>
-            <button className="btn btn-primary btn-sm" onClick={onAgendar}>
-              <Ic n="calendar_month" s={18} /> Agendar
-            </button>
             <button className="pdm-burger" onClick={() => setOpen((v) => !v)} aria-label="Menu">
               <Ic n={open ? "close" : "menu"} s={24} />
             </button>
@@ -93,13 +89,6 @@
               <img src="uploads/massagem.jpg"
                 alt="Tiago Silveira fazendo massagem terapêutica nas costas de um paciente"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }} />
-            </div>
-            <div className="pdm-hero-float card">
-              <span className="pdm-dot" />
-              <div>
-                <div style={{ fontSize: 12.5, color: "var(--ink-3)", fontWeight: 600, letterSpacing: ".04em" }}>PRÓXIMA VAGA</div>
-                <div style={{ fontWeight: 600 }}>Hoje, 16h00 · 50 min</div>
-              </div>
             </div>
             <div className="pdm-hero-seal">
               <Ic n="verified" s={18} />

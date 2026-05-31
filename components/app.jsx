@@ -4,15 +4,14 @@
   const {
     useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakSelect,
     Nav, Hero, Philosophy, Therapies, HowItWorks, MTC, Benefits,
-    About, Testimonials, Plans, Articles, Booking, FAQ, Contact, Footer, WhatsBubble,
+    About, Testimonials, Plans, FAQ, Contact, Footer, WhatsBubble,
     useReveal,
   } = window;
 
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "palette": "salvia",
     "type": "classico",
-    "hero": "editorial",
-    "booking": "completo"
+    "hero": "editorial"
   }/*EDITMODE-END*/;
 
   function scrollToId(id) {
@@ -25,7 +24,7 @@
   function App() {
     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
     useReveal();
-    const onAgendar = () => scrollToId("agendar");
+    const onAgendar = () => window.open(window.wa(), "_blank");
 
     return (
       <div className="pdm-root" data-palette={t.palette} data-type={t.type}>
@@ -40,8 +39,6 @@
           <About />
           <Testimonials />
           <Plans onAgendar={onAgendar} />
-          <Booking variant={t.booking} />
-          <Articles />
           <FAQ />
           <Contact />
         </main>
@@ -60,9 +57,6 @@
           <TweakRadio label="Hero" value={t.hero}
             options={["editorial", "imersivo"]}
             onChange={(v) => setTweak("hero", v)} />
-          <TweakRadio label="Agendamento" value={t.booking}
-            options={["completo", "simples"]}
-            onChange={(v) => setTweak("booking", v)} />
         </TweaksPanel>
       </div>
     );

@@ -67,21 +67,16 @@
                 <Ic n="chat" s={22} style={{ color: "var(--primary)" }} />
                 <div><strong>(51) 98579-2797</strong><span className="muted">WhatsApp e ligações</span></div>
               </div>
-              <div className="pdm-contact-row">
-                <Ic n="alternate_email" s={22} style={{ color: "var(--primary)" }} />
-                <div><strong>@poderdasmaos</strong><span className="muted">Instagram · conteúdo e bastidores</span></div>
-              </div>
             </div>
             <div className="pdm-contact-cta">
               <a className="btn btn-primary" href={wa()} target="_blank" rel="noreferrer" style={{ color: "#fff" }}><Ic n="chat" s={18} /> Chamar no WhatsApp</a>
-              <a className="btn btn-ghost" href="#agendar"><Ic n="calendar_month" s={18} /> Agendar online</a>
             </div>
           </div>
           <div className="pdm-contact-map reveal">
             <img src="uploads/fachada.jpg"
               alt="Fachada do Poder das Mãos, Rua Dr. Sebastião Leão, 151"
               style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            <div className="pdm-map-pin"><Ic n="location_on" s={20} /> O Poder das Mãos</div>
+            <a className="pdm-map-pin" href="https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Sebasti%C3%A3o%20Le%C3%A3o%2C%20151%2C%20Azenha%2C%20Porto%20Alegre%20-%20RS" target="_blank" rel="noreferrer"><Ic n="location_on" s={20} /> O Poder das Mãos <Ic n="north_east" s={14} /></a>
           </div>
         </div>
       </section>
@@ -99,9 +94,6 @@
                 Massagem, acupuntura, Medicina Chinesa e pilates,
                 um só lugar para o seu corpo respirar.
               </p>
-              <button className="btn btn-primary" style={{ marginTop: 18 }} onClick={onAgendar}>
-                <Ic n="calendar_month" s={18} /> Agendar sessão
-              </button>
             </div>
             <div className="pdm-footer-cols">
               <div>
@@ -112,21 +104,18 @@
               <div>
                 <h5>Navegar</h5>
                 <a href="#sobre">O Tiago</a><a href="#planos">Planos</a>
-                <a href="#conteudo">Conteúdo</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a>
+                <a href="#faq">Dúvidas</a><a href="#contato">Contato</a>
               </div>
               <div>
                 <h5>Contato</h5>
                 <a href={wa()} target="_blank" rel="noreferrer">WhatsApp</a>
-                <a href="#">Instagram</a><a href="#contato">Endereço</a>
+                <a href="#contato">Endereço</a>
               </div>
             </div>
           </div>
           <div className="pdm-footer-bot">
             <span>© 2026 Poder das Mãos T. S. da Silveira &amp; Cia LTDA · Porto Alegre/RS</span>
-            <span style={{ display: "flex", gap: 18, alignItems: "center" }}>
-              <a href="painel.html" style={{ color: "var(--ochre)", fontWeight: 600 }}>Painel da equipe</a>
-              <span>Feito com cuidado em Porto Alegre</span>
-            </span>
+            <span>Feito com cuidado em Porto Alegre</span>
           </div>
         </div>
       </footer>

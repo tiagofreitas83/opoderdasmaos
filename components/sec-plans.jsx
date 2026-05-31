@@ -4,19 +4,19 @@
 
   const PLANS = [
     {
-      name: "Sessão avulsa", price: 150, unit: "por sessão",
+      name: "Sessão avulsa", price: 180, unit: "por sessão",
       desc: "Para quem quer experimentar ou cuidar de algo pontual.",
       feats: ["Massagem, acupuntura ou pilates", "Avaliação inicial inclusa", "50 a 80 minutos", "Sem fidelidade"],
       cta: "Agendar avulsa", featured: false,
     },
     {
-      name: "Pacote 4 sessões", price: 560, unit: "R$ 140 cada · validade 60 dias",
+      name: "Pacote 4 sessões", price: 600, unit: "R$ 150 cada · validade 60 dias",
       desc: "O equilíbrio ideal entre constância e flexibilidade.",
       feats: ["4 sessões à sua escolha", "Combine as terapias", "Plano de cuidado personalizado", "Reagendamento livre"],
-      cta: "Quero o pacote", featured: true, save: "Economize R$ 40",
+      cta: "Quero o pacote", featured: true, save: "Economize R$ 120",
     },
     {
-      name: "Plano mensal", price: 135, unit: "cada · 4 sessões mensais · assinatura",
+      name: "Plano mensal", price: 140, unit: "cada · 4 sessões mensais · assinatura",
       desc: "Autocuidado como hábito, com prioridade na agenda.",
       feats: ["4 sessões por mês", "Prioridade nos horários", "10% off em sessões extras", "Acompanhamento contínuo"],
       cta: "Assinar plano", featured: false,

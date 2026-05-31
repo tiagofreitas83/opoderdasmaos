@@ -49,8 +49,9 @@
           {/* Featured: Massagem */}
           <div className="pdm-feature card reveal">
             <div className="pdm-feature-media">
-              <image-slot id="ther-massagem" shape="rect" placeholder="Foto: massagem terapêutica"
-                style={{ width: "100%", height: "100%" }}></image-slot>
+              <img src="uploads/sala.jpg"
+                alt="Sala de atendimento da clínica, com maca e ambiente acolhedor"
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
               <span className="pill pill-accent pdm-feature-badge"><Ic n="star" s={15} /> Mais procurada</span>
             </div>
             <div className="pdm-feature-body">
